@@ -1,0 +1,9 @@
+#practice 24
+dim = int(input("how big do you want the board to be? "))
+
+def row(dim):
+    print("---"*dim*2)
+    print("|   |"*dim)
+    print("---"*dim*2)
+
+print(row*dim)
