@@ -1,9 +1,20 @@
-#practice 24
-dim = int(input("how big do you want the board to be? "))
+#practice 25
+import random
+print("I'm going to try to guess your number between 1-10")
 
-def row(dim):
-    print("---"*dim*2)
-    print("|   |"*dim)
-    print("---"*dim*2)
-
-print(row*dim)
+while True:
+    guess_1 = random.randint(1,10)
+    check_1 = input(f'is your number {guess_1}? Y/N ').upper
+    attempt = 0
+    if check_1 == "N":
+        attempt =+1
+        recheck = input("is it too high or too low? ").lower
+        if recheck == "high":
+            guess_2 = guess_1 + 1
+            print("Is it {guess_2}? ")
+        elif recheck == "low":
+            guess_2 = guess_1 - 1
+            print("Is it {guess_2}? ")
+    else:
+        print(f'Nice! I got it in {attempt} tries')
+        break
